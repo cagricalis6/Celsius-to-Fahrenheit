@@ -25,3 +25,4 @@ jobs:
                   context: .
                   push: true
                   tags: ozgurozturknet/celsius-to-fahrenheit:${{ github.sha }}
+                  file: ./Dockerfile
