@@ -1,0 +1,30 @@
+{
+    "family": "ctf",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "ctf",
+            "image": "ozgurozturknet/celsius-to-fahrenheit:ba38a178602318b33b6ab96f3d572bcb27435f67",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [
+                "sh",
+                "-c"
+            ],
+            "command": [
+                "python3 main.py" 
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+}
